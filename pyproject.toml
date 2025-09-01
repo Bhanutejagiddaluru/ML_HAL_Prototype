@@ -1,0 +1,19 @@
+
+[build-system]
+requires = ["setuptools>=68", "wheel", "pybind11>=2.12", "cmake>=3.24"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ml-hal-prototype"
+version = "0.1.0"
+description = "Mock HAL bridging PyTorch to a simulated accelerator (C++ ext + Python fallback)"
+authors = [{name="You", email="you@example.com"}]
+requires-python = ">=3.9"
+dependencies = ["numpy", "torch", "tqdm"]
+
+[tool.setuptools]
+packages = ["src"]
+package-dir = {"" = "."}
+
+[tool.setuptools.package-data]
+"src.hal.cpp" = ["*.cpp", "CMakeLists.txt"]
